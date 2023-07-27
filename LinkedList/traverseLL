@@ -1,0 +1,45 @@
+// How To traverse LL
+#include <iostream>
+using namespace std;
+class Node{
+   public : 
+   int data ; // any tpe
+   Node* next; // to store next node   so type is next
+   Node ( int data) // constructor use  to create new node
+    {
+    this->data = data; 
+     }
+
+};
+// Method to traverse LL
+void traverse( Node* head ) 
+{
+    Node* curr = head;
+    while(curr != NULL) 
+    {
+    cout<<curr->data;
+    // use for only arrow print
+    if(curr->next != NULL)
+    { cout<<"->"; }
+    // use to update curr ka next
+    curr = curr->next;
+}
+}
+int main() {
+
+    Node* n1 = new Node(10);
+    Node* n2 = new Node(20);
+    Node* n3 = new Node(30);
+
+    Node* head = n1;
+    head->next = n2;
+    n2->next = n3;
+    n3->next = NULL;
+    
+    // Use to traverse LL
+    traverse(head);
+
+}
+
+
+
